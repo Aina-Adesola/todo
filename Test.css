@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ===================== */
+/* Splash Screen         */
+/* ===================== */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    270deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Logo */
+#logo {
+  width: clamp(120px, 30vw, 200px);
+  animation: zoomIn 1.5s ease forwards;
+  margin-bottom: 30px;
+}
+
+/* Progress bar */
+.progress-container {
+  width: clamp(200px, 50vw, 320px);
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  transition: width 0.1s linear;
+}
+
+/* ===================== */
+/* Main Screen           */
+/* ===================== */
+#main-content {
+  display: none;
+}
+
+.screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+/* ===================== */
+/* Skip Button           */
+/* ===================== */
+.skip-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 12px; /* closer to slideshow */
+}
+
+/* ===================== */
+/* Center Content        */
+/* ===================== */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ===================== */
+/* Slideshow             */
+/* ===================== */
+.slideshow-container {
+  width: 213px;
+  height: 277.78px;
+  position: relative;
+  overflow: hidden;
+  /*margin-top: 40px; /* space above slideshow */
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* ===================== */
+/* Text Styles           */
+/* ===================== */
+.title {
+  font-size: 22px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
+  max-width: 260px;
+}
+
+/* ===================== */
+/* Bottom Navigation     */
+/* ===================== */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.next-btn {
+  background: #7b61ff;
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px; /* space above NEXT */
+}
+
+/* ===================== */
+/* Animations            */
+/* ===================== */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

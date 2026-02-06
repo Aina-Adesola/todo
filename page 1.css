@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+
+/* ===================== */
+/* Main Screen           */
+/* ===================== */
+#main-content {
+  background-color: black;
+}
+
+.screen {
+    position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+/* Skip */
+
+.skip-btn {
+  position: absolute;
+  top: 20px;
+   /*left: 20px !important;*/
+   padding-right: 1000;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+  /* Add these to be extra sure */
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+
+/* Center Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 14px; */
+}
+
+/* Image Container */
+.slideshow-container {
+  width: 313px;
+  height: 377.78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Single Image Override */
+.slide.single {
+  opacity: 1;
+  position: static;
+}
+
+/* Dash Indicator */
+.dash-indicator {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.dash {
+  width: 38px;
+  height: 4px;
+  border-radius: 4px;
+  background: #444;
+}
+
+.dash.active {
+  background: #7b61ff;
+}
+
+/* Text */
+.title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 21px;
+  color: #aaa;
+  max-width: 390px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+
+/* Bottom Nav */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.next-btn {
+  background: #7b61ff;
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
