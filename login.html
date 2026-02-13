@@ -10,36 +10,40 @@
 
 
 <!-- Main Content -->
+<!-- Main Content -->
 <div id="main-content" class="screen">
+    
 
-    <div class="hdr">
-      <div><h2> Login </h2></div>
-      <div>
-        <button> Saved task</button>
-      </div>
+    <!-- Give the first textarea a unique ID -->
+    <div class="input-section">
+    <div class="field">
+        <label class="crab">Event Title</label> 
+        <input id="eventTitle" class="crabs" placeholder="e.g. Spice Inventory Check"
+        minlength="3"
+        maxlength="22">
+        <p id="error-title" class="error-msg"></p>
     </div>
 
-    <label id="title" class="crab">
-        Title of event
-    </label> 
-    <textarea id="des" name="des"
-     class="crabs" rows="4" cols="50" 
-     minlength="5" maxlength="200" 
-     placeholder="Enter your Description here"
-     required> 
-    </textarea>
-
-    <label id="des" class="crab">
-       Event Description 
-    </label> 
-    <textarea id="des" name="des"
-     class="crabs" rows="4" cols="50" 
-     minlength="5" maxlength="200" 
-     placeholder="Enter your Description here"
-     required> 
-    </textarea>
-
-    <button> Submit/Save</button>
-
+    <div class="field">
+        <label class="crab">Description</label> 
+        <textarea id="eventDescription" class="crabs1" rows="4" placeholder="Details about the task..."
+        minlength="3"
+        maxlength="902"></textarea>
+        <p id="error-desc" class="error-msg"></p>
+    </div>
 </div>
+
+    <br>
+    <div class="bu-f">
+     <button onclick="saveInput()" class="buf">Save</button>
+     <button onclick="clearAll()" class="buf1">Clear All Tasks</button>
+    </div>
+    
+    <h1>Below are saved tasks</h1>
+    <div id="tasks-container"></div> <!-- Use a container for better formatting -->
+</div>
+
+<script src="login.js"></script>
+
+
 
